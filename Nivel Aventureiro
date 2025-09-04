@@ -1,0 +1,66 @@
+#include <stdio.h>
+
+// Constantes para os movimentos
+const int BISPO_PASSOS = 5;
+const int TORRE_PASSOS = 5;
+const int RAINHA_PASSOS = 8;
+const int CAVALO_MOVIMENTOS = 3; // Quantidade de movimentos em L
+const int PASSOS_BAIXO = 2;      // Parte do cavalo
+const int PASSOS_ESQUERDA = 1;   // Parte do cavalo
+
+int main() {
+    // -----------------------------
+    // Movimento do Bispo
+    // -----------------------------
+    printf("=== Movimento do Bispo ===\n");
+    for (int i = 1; i <= BISPO_PASSOS; i++) {
+        printf("Cima\n");
+        printf("Direita\n");
+    }
+
+    // -----------------------------
+    // Movimento da Torre
+    // -----------------------------
+    printf("\n=== Movimento da Torre ===\n");
+    int contador = 1;
+    while (contador <= TORRE_PASSOS) {
+        printf("Direita\n");
+        contador++;
+    }
+
+    // -----------------------------
+    // Movimento da Rainha
+    // -----------------------------
+    printf("\n=== Movimento da Rainha ===\n");
+    int j = 1;
+    do {
+        printf("Esquerda\n");
+        j++;
+    } while (j <= RAINHA_PASSOS);
+
+    // -----------------------------
+    // Movimento do Cavalo
+    // -----------------------------
+    printf("\n=== Movimento do Cavalo ===\n");
+
+    // Loop externo controla quantos movimentos em "L" o cavalo fará
+    for (int l = 1; l <= CAVALO_MOVIMENTOS; l++) {
+        printf("\nMovimento em L #%d:\n", l);
+
+        // Parte 1 do L: andar 2 casas para baixo
+        int i = 1;
+        while (i <= PASSOS_BAIXO) {
+            printf("Baixo\n");
+            i++;
+        }
+
+        // Parte 2 do L: andar 1 casa para a esquerda
+        int k = 1;
+        do {
+            printf("Esquerda\n");
+            k++;
+        } while (k <= PASSOS_ESQUERDA);
+    }
+
+    return 0;
+}
