@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+// Constantes para quantidade de movimentos
+const int BISPO_PASSOS = 5;
+const int TORRE_PASSOS = 5;
+const int RAINHA_PASSOS = 8;
+
+int main() {
+    // -----------------------------
+    // Movimento do Bispo
+    // -----------------------------
+    // O bispo anda na diagonal superior direita.
+    // Como só temos Cima e Direita, precisamos combinar:
+    // 1 passo = "Cima" + "Direita"
+    printf("=== Movimento do Bispo ===\n");
+    for (int i = 1; i <= BISPO_PASSOS; i++) {
+        printf("Cima\n");
+        printf("Direita\n");
+    }
+
+    // -----------------------------
+    // Movimento da Torre
+    // -----------------------------
+    // A torre anda apenas em linha reta. Aqui: 5 casas para a direita.
+    printf("\n=== Movimento da Torre ===\n");
+    int contador = 1;
+    while (contador <= TORRE_PASSOS) {
+        printf("Direita\n");
+        contador++;
+    }
+
+    // -----------------------------
+    // Movimento da Rainha
+    // -----------------------------
+    // A rainha anda em qualquer direção, aqui: 8 casas para a esquerda.
+    printf("\n=== Movimento da Rainha ===\n");
+    int j = 1;
+    do {
+        printf("Esquerda\n");
+        j++;
+    } while (j <= RAINHA_PASSOS);
+
+    return 0;
+}
